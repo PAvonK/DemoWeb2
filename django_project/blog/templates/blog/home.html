@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    {% if title %}
-        <title>Django Blog - {{  title }}</title> <!--if there is a title we can pass it in here-->
-    {% else %}
-        <title>Django blog</title> <!--if there it no title it just prints without passing in-->
-    {% endif %}
-</head>
-<body>
+{% extends "blog/base.html" %}
+{% block content %}
     {% for post in posts %} <!--example of how to write code in django | for loop example-->
-        <h1>{{ post.title }}</h1> <!--the double { how  to pass in a variable -->
-        <p>By {{ post.author }} on {{ post.date_posted }}</p>
-        <p>{{ post.content }}</p>
-    {% endfor %} <!--must always end a for or if code-->
-</body>
-</html>
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ post.author }}</a>
+              <small class="text-muted">{{ post.date_posted }}</small>
+            </div>
+            <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}

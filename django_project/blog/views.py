@@ -28,7 +28,7 @@ def home(request):
 
 def about(request):
     # Simple Https response that says we have landed on the blog about page
-    return render(request, 'blog/about.html')
+    return render(request, 'blog/about.html', {'title': 'About'})
 
 
 
