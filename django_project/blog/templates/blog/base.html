@@ -1,3 +1,5 @@
+<!-- this is the master template, other pages pull the basics from here-->
+
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -10,7 +12,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}"> <!--Here is where the css.html file from static is connected-->
 
     {% if title %}
         <title>Django Blog - {{ title }}</title> <!--if there is a title we can pass it in here-->
@@ -22,7 +24,7 @@
     <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
-          <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">Django Blog</a>
+          <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">Django Blog</a> <!--creates a dynamic link (abolute path) to the home page rather than harcoding the words. If hard coding is needed just enter href="#">Django Blog for instance-->
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
@@ -43,7 +45,7 @@
     <main role="main" class="container">
       <div class="row">
         <div class="col-md-8">
-          {% block content %}{% endblock %}
+          {% block content %}{% endblock %} <!-- this allows the block of data in home and read me for istance to be placed here.-->
         </div>
         <div class="col-md-4">
           <div class="content-section">

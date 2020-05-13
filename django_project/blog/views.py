@@ -23,11 +23,11 @@ def home(request):
     context = {
         'posts': posts
     }
-    # Simple Https response that says we have landed on the blog home page
+    # render is how we return that template 
     return render(request, 'blog/home.html', context)
 
 def about(request):
-    # Simple Https response that says we have landed on the blog about page
+    # render is how we return that template 
     return render(request, 'blog/about.html', {'title': 'About'})
 
 

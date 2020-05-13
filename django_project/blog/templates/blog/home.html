@@ -1,7 +1,9 @@
+<!--this is the block of content that connects with the base.htmp template-->
 {% extends "blog/base.html" %}
 {% block content %}
     {% for post in posts %} <!--example of how to write code in django | for loop example-->
-        <article class="media content-section">
+    <!-- the following is a way to dress up the blog posts-->    
+    <article class="media content-section">
           <div class="media-body">
             <div class="article-metadata">
               <a class="mr-2" href="#">{{ post.author }}</a>
