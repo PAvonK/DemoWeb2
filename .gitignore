@@ -1,0 +1,33 @@
+# Prerequisites
+
+# Object files
+
+# Linker output
+
+# Precompiled Headers
+
+# Libraries
+
+
+# Shared objects (inc. Windows DLLs)
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+
+# Kernel Module Compile Results
+
+# custom
+audiofiles/
+*.mp3
+*.wav
+*.docx
+transcript.txt
+api-key.json
+*.pdf
