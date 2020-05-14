@@ -22,7 +22,7 @@ urlpatterns = [
     # the 'blog_dev/' specifiec the path that must be in the url
     # path('blog_dev/', include('blog.urls'))
     # if the path is empty that means it is the home page
-    path('register/', user_views.register, name='register'),
+    path('register/', user_views.register, name='register'), #because of the import above this pattern sends them to the register views in users
     path('', include('blog.urls'))
 ]
 

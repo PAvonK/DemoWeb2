@@ -1,17 +1,16 @@
 {% extends "blog/base.html" %}
-{% load crispy_forms_tags %}
+{% load crispy_forms_tags %} <!--Enables use of cripsy_forms-->
 {% block content %}
     <div class='content-section'>
         <form method="POST">
-            {% csrf_token %}
+            {% csrf_token %} <!--This is a token that is requieed by django for every form for secruity-->
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Join Today</legend>
-                {{ form|crispy  }}
+                {{ form|crispy  }} <!--form variable with crispy formatting-->
             </fieldset>
             <div class='form-group'>
                 <button class="btn btn-outline-info" type'"submit">Sign Up</button>
             </div>
-
         </form>
         <div class="border-top pt-3">
             <small class="text-muted">

@@ -45,7 +45,7 @@
     <main role="main" class="container">
       <div class="row">
         <div class="col-md-8">
-          {% if messages %}
+          {% if messages %} <!--looks for flash messages and if one exists it shows it on whatever page the user is on because we have enetered it on the base template and before the content block below-->
             {% for message in messages %}
               <div class="alert alert-{{ message.tags }}">
                 {{ message }}

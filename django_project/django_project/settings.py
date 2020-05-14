@@ -32,8 +32,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'blog.apps.BlogConfig', # inherited from blog / apps.py class
-    'users.apps.UsersConfig',
-    'crispy_forms',
+    'users.apps.UsersConfig', # inherited from users / apps.py class
+    'crispy_forms', # allows the use of crispy_forms app
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
