@@ -6,7 +6,7 @@ from django.http import HttpResponse
 def home(request):
     # dictionary key / value to connect to posts from above
     context = {
-        'posts': Post.objects.all()
+        'posts': Post.objects.all() # pulls from database because of from .models import Post above
     }
     # render is how we return that template 
     return render(request, 'blog/home.html', context)

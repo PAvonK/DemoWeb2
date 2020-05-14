@@ -31,3 +31,8 @@ audiofiles/
 transcript.txt
 api-key.json
 *.pdf
+
+# special md files
+dataBase_readME.md
+templateStructure.md
+staticStructure.md
