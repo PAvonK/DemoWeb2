@@ -122,6 +122,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #this is essentially setting the project media root to the project base directory in a folder named media
+MEDIA_URL = '/media/' 
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'blog-home' # redirects the default login redirect, this means that if someone logs in it will direct them to this page upon successful log in
