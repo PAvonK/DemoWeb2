@@ -2,7 +2,12 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User # to import the user from user table
 
-class Post(models.Model):
+"""
+The class is what determines what is going to be in the database.
+
+More specifically, the class determines the table of the database and attribute will be a different field in the database
+""" 
+class Post(models.Model): #inheriting from models module
     title = models.CharField(max_length=100)
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
