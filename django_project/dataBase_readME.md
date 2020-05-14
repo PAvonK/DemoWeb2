@@ -25,7 +25,7 @@ migrations will be found in app/migrations/0001_initial.py (app meaning the name
     ** this allows us to work in the python shell and work with our objects
 
 #### >>> from blog.models import Post
-#### >>> from djange.contrib.auth.models import User
+#### >>> from django.contrib.auth.models import User
     ** These import the models so we can work directly in those databases
 
 #### >>> User.objects.all()
