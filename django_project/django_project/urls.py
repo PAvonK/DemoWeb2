@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.contrib.auth import views as auth_views #imports the authorization views from contrib auth. always want to rename these so that we don't two views
 from django.urls import path, include
 from users import views as user_views
 
@@ -23,6 +24,9 @@ urlpatterns = [
     # path('blog_dev/', include('blog.urls'))
     # if the path is empty that means it is the home page
     path('register/', user_views.register, name='register'), #because of the import above this pattern sends them to the register views in users
+    path('profile/', user_views.profile, name='profile'),
+    path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'), #class based view
+    path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
     path('', include('blog.urls'))
 ]
 
