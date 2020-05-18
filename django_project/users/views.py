@@ -18,17 +18,17 @@ def register(request):
 
 @login_required # this decorator is used prior to the function in order to make sure that the person must be logged in to view the profile page
 def profile(request):
-    if request.method == 'POST':
+    if request.method == 'POST': #ultimately shis check if the request is POST data, if it is then it changes the data, if it is not then it leaves it the same
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
         if u_form.is_valid() and p_form.is_valid():
             u_form.save()
             p_form.save()
-            messages.success(request, f'You account has been updated!')
-            return redirect('profile')
+            messages.success(request, f'You account has been updated!') #simple flash message that shows success on updating. 
+            return redirect('profile') #re directs them back to the profile page
     else:
-        u_form = UserUpdateForm(instance=request.user)
-        p_form = ProfileUpdateForm(instance=request.user.profile)
+        u_form = UserUpdateForm(instance=request.user) # (instance=request.user) makes sure that the data is prefilled in on the forms for user
+        p_form = ProfileUpdateForm(instance=request.user.profile) # instance=request.user.profile makes sure that the data is prefilled in on the forms for user profile
 
     context = {
         'u_form': u_form,

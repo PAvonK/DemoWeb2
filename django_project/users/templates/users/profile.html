@@ -9,10 +9,12 @@
             <p class="text-secondary">{{ user.email }}</p>
           </div>
         </div>
-        <form method="POST" enctype="multipart/form-data">
+        <form method="POST" enctype="multipart/form-data"> <!-- this enctype is important because it actually saved the image--> 
+            <!--form data from forms.py / views.py-->
             {% csrf_token %} 
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Profile Info</legend>
+                <!--both u_form and p_form listed together make them show up as in one form rather than two-->
                 {{ u_form|crispy  }} <!--form variable with crispy formatting-->
                 {{ p_form|crispy  }}
             </fieldset>
