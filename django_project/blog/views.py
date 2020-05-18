@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from .models import Post
-from django.http import HttpResponse
 
 # this is the logic for how we want to handle when a user wants to go to our home page
 def home(request):
@@ -14,6 +13,7 @@ def home(request):
 def about(request):
     # render is how we return that template 
     return render(request, 'blog/about.html', {'title': 'About'})
+
 
 
 
