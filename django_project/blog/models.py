@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User # to import the user from user table
+from django.urls import reverse
 
 """
 The class is what determines what is going to be in the database.
@@ -17,4 +18,9 @@ class Post(models.Model): #inheriting from models module
     # defines a return to print out by the title
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('post-detail', kwargs={'pk': self.pk})
+
+
 

@@ -1,0 +1,16 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %} <!--Enables use of cripsy_forms-->
+{% block content %}
+    <div class='content-section'>
+        <form method="POST">
+            {% csrf_token %} <!--This is a token that is requieed by django for every form for secruity-->
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Blog Post</legend>
+                {{ form|crispy  }} <!--form variable with crispy formatting-->
+            </fieldset>
+            <div class='form-group'>
+                <button class="btn btn-outline-info" type'"submit">Post</button>
+            </div>
+        </form>
+    </div>>
+{% endblock content %}

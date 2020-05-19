@@ -9,7 +9,7 @@
             <a class="mr-2" href="#">{{ post.author }}</a>
             <small class="text-muted">{{ post.date_posted | date:"F d, Y" }}</small>
           </div>
-          <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+          <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2> <!--The url here creates the link to make the headers active on the home page. with this if you click on one of the titles it will take you to the detail of that post-->
           <p class="article-content">{{ post.content }}</p>
         </div>
       </article>
